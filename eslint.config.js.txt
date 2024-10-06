@@ -1,0 +1,22 @@
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import pluginJest from "eslint-plugin-jest";
+import eslintConfigPrettier from "eslint-config-prettier";
+
+export default [
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+    plugins: {
+      jest: pluginJest,
+    },
+    ignores: ["**/*.test.js", "!**/eslint.config.mjs"],
+    rules: {
+      "prefer-const": "warn",
+      "no-irregular-whitespace": "error",
+    },
+  },
+  eslintConfigPrettier,
+  pluginJs.configs.recommended,
+];
