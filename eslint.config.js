@@ -1,6 +1,6 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import pluginJest from "eslint-plugin-jest";
+//import pluginJest from "eslint-plugin-jest";
 import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
@@ -8,9 +8,9 @@ export default [
     languageOptions: {
       globals: globals.browser,
     },
-    plugins: {
-      jest: pluginJest,
-    },
+    //   plugins: {
+    // jest: pluginJest,
+    // },
     ignores: ["**/*.test.js", "!**/eslint.config.mjs"],
     rules: {
       "prefer-const": "warn",

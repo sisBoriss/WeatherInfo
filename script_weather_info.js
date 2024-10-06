@@ -21,19 +21,19 @@
    * @param {string} cityName
    */
   async function getWeatherUserLocation() {
-    let response = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
+    const response = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
     //response = response.replaceAll(',', '\n');
     return response;
   }
 
   async function getWeather(cityName) {
-    let token = "63b151efb40928e868a13e6198b120c9";
-    let response = await fetch(
+    const token = "63b151efb40928e868a13e6198b120c9";
+    const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${cityName}&appid=${token}`,
     );
     response.json();
     let result;
-    for (let key in result) {
+    for (const key in result) {
       result += `${key}: ${response[key]}\n`;
     }
     return result;
